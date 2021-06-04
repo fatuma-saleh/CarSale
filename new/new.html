@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--browser compactibilty-->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add new car</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.css"
+    integrity="sha256-QVBN0oT74UhpCtEo4Ko+k3sNo+ykJFBBtGduw13V9vw=" crossorigin="anonymous" />
+  <script src="new.js"></script>
+</head>
+<body>
+  <div class="ui container">
+    <div class="ui secondary raised  segment">
+      <br><br>
+      <div class="ui huge header">Car Sales App!
+        <div class="sub header">Add new cars and list all available cars</div>
+      </div>
+      <div class="ui medium header">Add a new car</div>
+      <br>
+      <form name="carForm" action="" class="ui form" onsubmit="save(); return false" >
+        <div class="field">
+          <label for="">Enter your Name</label>
+          <input type="text" placeholder="Enter name..." name="sellerName" >
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="">Address</label>
+            <input type="text" placeholder="Enter address..." name="address">
+          </div>
+          <div class="field">
+            <label for="">City Name</label>
+            <input type="text" placeholder="Enter city..." name="city">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="">Postal Code</label>
+            <input type="text" pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9] " placeholder="Enter postal code..." name="postal">
+          </div>
+          <div class="field">
+            <label for="">Province</label>
+            <select id="provinces">
+              <option value="britishColumbia">British Columbia</option>
+              <option value="alberta">Alberta</option>
+              <option value="saskatchewan">Saskatchewan</option>
+              <option value="manitoba">Manitoba</option>
+              <option value="ontario">Ontario</option>
+              <option value="quebec">Quebec</option>
+              <option value="newBrunswick">New Brunswick</option>
+              <option value="novaScotia">Nova Scotia</option>
+              <option value="princeEdwardIsland">Prince Edward Island</option>
+              <option value="yukon">Yukon</option>
+              <option value="nunavut">Nunavut</option>
+            </select>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="">Phone Number</label>
+            <input type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="Enter phone number..." name="phone">
+		        </div>
+          <div class="field">
+            <label for="">Email</label>
+            <input type="email" placeholder="Enter email..." name="email">
+			
+          </div>
+        </div>
+        <div class="three fields">
+          <div class="field">
+            <label for="">Vehicle Make</label>
+            <input type="text" placeholder="Enter vehicle make..." name="make">
+          </div>
+          <div class="field">
+            <label for="">Vehicle Model</label>
+            <input type="text" placeholder="Enter vehicle model..." name="model">
+          </div>
+          <div class="field">
+            <label for="">Vehicle Year</label>
+            <input type="text" placeholder="Enter vehicle year..." name="year">
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="field">
+            <label for="">Kilometers</label>
+            <input type="number" placeholder="Enter kilometers..." name="km">
+          </div>
+          <div class="field">
+            <label for="">Features</label>
+            <div class="inline field">
+              <input type="checkbox" class="hidden" id="accheck">
+              <label>Air Conditioning</label>
+            </div>
+            <div class="inline field">
+              <input type="checkbox" tabindex="0" class="hidden" id="bccheck">
+              <label>Backup Camera</label>
+            </div>
+            <div class="inline field">
+              <input type="checkbox" tabindex="0" class="hidden" id="hscheck">
+              <label>Heated Seats</label>
+            </div>
+            <div class="inline field">
+              <input type="checkbox" tabindex="0" class="hidden" id="tpms">
+              <label>TPMS</label>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="">Ownership</label>
+          <div class="inline field">
+            <input type="radio" name="ownership" class="hidden" id="new">
+            <label>No previous owner(new)</label>
+          </div>
+          <div class="inline field">
+            <input type="radio" name="ownership" class="hidden" id="one">
+            <label>Only one previous owner</label>
+          </div>
+          <div class="inline field">
+            <input type="radio" name="ownership" class="hidden" id="multiple">
+            <label>More than one previous owner</label>
+          </div>
+        </div>
+        <!--  -->
+        <h3 id="error" class="ui medium header" style="display: none; color: red">Please fill out all fields correctly</h3>
+        <button class="ui green button" type="button" onclick="save(); return false"> Submit</button>
+      </form>
+      <br>
+      <div id="segment" class="ui basic segment"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
